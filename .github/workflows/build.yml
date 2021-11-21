@@ -1,0 +1,17 @@
+name: Build and deploy
+on: [workflow_dispatch, push]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Install dependencies
+              run: npm install
+            - name: Build
+              run: npm run build
+            - name: Upload generated file
+              uses: actions/upload-artifact@v2
+              with:
+                  name: MDSS Zselyi
+                  path: build/mdss.min.css
