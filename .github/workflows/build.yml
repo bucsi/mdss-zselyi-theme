@@ -12,6 +12,7 @@ jobs:
               run: npm run build
             - name: tagging debug
               run: echo ${{ env.GITHUB_RUN_NUMBER }}
+              run: env
             - name: Create release
               uses: ncipollo/release-action@v1
               with:
