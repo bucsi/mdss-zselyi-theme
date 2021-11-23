@@ -6,6 +6,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Testing
-                  tag: ${{ env.GITHUB_RUN_NUMBER }}
-                  token: ${{ secrets.GITHUB_TOKEN }}
             - run: env
