@@ -13,9 +13,9 @@ jobs:
             - name: Create release
               uses: ncipollo/release-action@v1
               env:
-                  run_number: ${{ github.run_number }}
+                  version: v0.0.1-${{ github.run_number }}
               with:
                   artifacts: "build/*.css"
-                  tag: "v0.0.1-$run_number"
+                  tag: ${{ env.version }}
                   commit: "master"
                   token: ${{ secrets.GITHUB_TOKEN }}
