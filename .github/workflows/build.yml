@@ -11,8 +11,6 @@ jobs:
             - name: Build
               run: npm run build
             - name: Create release
-              uses: ncipollo/release-action@v1
-              with:
-                  artifacts: "build/*.css"
-                  tag: ${{ env.GITHUB_RUN_NUMBER }}
-                  token: ${{ secrets.GITHUB_TOKEN }}
+               - uses: rymndhng/release-on-push-action@master
+                    with:
+                    bump_version_scheme: patch
