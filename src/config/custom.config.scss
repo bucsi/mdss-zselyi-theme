@@ -13,6 +13,11 @@
     padding: 0 $spacing-large;
     margin: $spacing-huge;
   }
+
+  h1,
+  h2 {
+    text-transform: none;
+  }
 }
 
 @mixin custom-screen {
