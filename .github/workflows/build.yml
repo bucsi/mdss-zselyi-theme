@@ -16,6 +16,6 @@ jobs:
               uses: ncipollo/release-action@v1
               with:
                   artifacts: "build/*.css"
-                  tag: "i hate this"
+                  tag: "i-hate-this"
                   commit: "master"
                   token: ${{ secrets.GITHUB_TOKEN }}
