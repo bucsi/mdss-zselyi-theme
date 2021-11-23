@@ -1,8 +1,8 @@
-name: Build and deploy
+name: Build and release
 on: [workflow_dispatch]
 
 jobs:
-    build:
+    build-and-release:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
@@ -10,11 +10,12 @@ jobs:
               run: npm install
             - name: Build
               run: npm run build
+            - name: tagging debug
+              run: echo ${{ env.GITHUB_RUN_NUMBER }}
             - name: Create release
               uses: ncipollo/release-action@v1
               with:
                   artifacts: "build/*.css"
-                  run: echo ${{ env.GITHUB_RUN_NUMBER }}
                   tag: ${{ env.GITHUB_RUN_NUMBER }}
                   commit: "master"
                   token: ${{ secrets.GITHUB_TOKEN }}
