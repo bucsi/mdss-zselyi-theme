@@ -4,6 +4,15 @@
   header {
     font-weight: 500;
   }
+
+  blockquote {
+    color: $root-font-color;
+    font-size: $root-font-size;
+    line-height: $root-line-height;
+    border-left: 5px solid $color-primary;
+    padding: 0 $spacing-large;
+    margin: $spacing-huge;
+  }
 }
 
 @mixin custom-screen {
