@@ -4,21 +4,16 @@ on: [workflow_dispatch]
 jobs:
     build-and-release:
         runs-on: ubuntu-latest
-        env:
-            TESTING: value
-            tag-value: "0.0.1-$GITHUB_RUN_NUMBER"
         steps:
             - uses: actions/checkout@v2
             - name: Install dependencies
               run: npm install
             - name: Build
               run: npm run build
-            - name: tagging debug
-              run: env
             - name: Create release
               uses: ncipollo/release-action@v1
               with:
                   artifacts: "build/*.css"
-                  tag: ${{ env.tag-value }}
+                  tag: ${{ github.run_id }}
                   commit: "master"
                   token: ${{ secrets.GITHUB_TOKEN }}
