@@ -16,6 +16,6 @@ jobs:
               uses: ncipollo/release-action@v1
               with:
                   artifacts: "build/*.css"
-                  tag: ${{ env.GITHUB_RUN_NUMBER }}
+                  tag: ${{ GITHUB_RUN_NUMBER }}
                   commit: "master"
                   token: ${{ secrets.GITHUB_TOKEN }}
